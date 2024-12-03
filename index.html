@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Dystopia</title>
+
+</head>
+<body>
+
+    <img id="title" src="Images/Title.png" class="flicker-image">
+   
+
+    <div class="subway-container">
+        <img id="shift-image" src="Images/Subwayy.png">
+        <img id="subway-overlay" class="overlay-image" src="Images/Subway2.png">
+    </div>
+
+
+      <div class="climateclock-container">
+        <img src="Images/Climateclock.png">
+        <img id="clock-overlay" class="overlay-image" src="Images/Time.png">
+    </div>
+
+
+    <div class="police-container">
+        <img src="Images/Police.png">
+        <img id="police-overlay" class="overlay-image" src="Images/Police Overlay.jpg">
+    </div>
+
+    <div class="timesquare-container">
+        <img src="Images/Reworked.png">
+        <img id="timesquare-overlay" class="overlay-image" src="Images/Overlay.png">
+    </div>
+
+    <div class="trash-container">
+        <img src="Images/Trash.png">
+        <img id="trash-overlay" class="overlay-image" src="Images/Trash Overlay.png">
+    </div>
+
+<div class="homeless-container">
+    <img src="Images/Homeless.png" alt="Homeless.png">
+    <img id="homeless-overlay" class="overlay-image" src="Images/HomelessOverlay.png" alt="HomelessOverlay.png">
+</div>
+
+    <div class="protest-container">
+        <img id="protest-image" src="Images/Protest.png" alt="Protest.png">
+</div>
+
+ <div class="consumer-container">
+        <img id="consumer-image" src="Images/Consumer.png" alt="Consumer.png">
+ <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+    <div class="dollar-sign">$</div>
+
+</div>
+
+
+<div class="surveillance-container">
+      <img src="Images/Surveillance.png" alt="Surveillance.png">
+
+
+
+
+
+
+
+<div class="liberty-container">
+        <img id="liberty-image" src="Images/Liberty.png" alt="Liberty.png">
+         <div class="rain-container">
+             <img src="Images/Rain.png" alt="Rain.png">
+</div>
+</div>
+
+
+    <script>
+        const climateclockOverlay = document.getElementById('clock-overlay');
+        const policeOverlay = document.getElementById('police-overlay');
+        const timesquareOverlay = document.getElementById('timesquare-overlay');
+        const subwayOverlay = document.getElementById('subway-overlay');
+        const TrashOverlay = document.getElementById('trash-overlay');
+        const HomelessOverlay = document.getElementById('homeless-overlay');
+
+        // Function to add the 'overlay-visible' class when an image is in view
+        function handleIntersection(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('overlay-visible');
+                } else {
+                    entry.target.classList.remove('overlay-visible');
+                }
+            });
+        }
+
+        // Create an IntersectionObserver
+        const observer = new IntersectionObserver(handleIntersection, {
+            threshold: 0.4 // Trigger when 40% of the image is in view
+        });
+        
+        // Observe each overlay element
+        observer.observe(climateclockOverlay);
+        observer.observe(policeOverlay);
+        observer.observe(timesquareOverlay);
+        observer.observe(subwayOverlay);
+        observer.observe(TrashOverlay);
+        observer.observe(HomelessOverlay);
+
+
+    </script>
+
+</body>
+</html>
